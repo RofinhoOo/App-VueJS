@@ -58,19 +58,24 @@ export default {
         },
         {
           id: 1,
-          title: "Sacar el perro a pasear",
+          title: "sacar el perro a pasear",
           completed: true,
         },
         {
           id: 2,
-          title: "Estudiar Vue.js",
+          title: "estudiar Vue.js",
           completed: false,
         },
         {
           id: 3,
-          title: "Jugar a pádel",
+          title: "jugar a pádel",
           completed: true,
         },
+        {
+          id: 4,
+          title: "programar",
+          completed: true,
+        }
       ],
       copyTodos: [],
     };
