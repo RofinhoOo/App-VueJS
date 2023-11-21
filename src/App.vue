@@ -4,12 +4,15 @@
       <SearchComponent v-on:query-change="querySearch" />
     </div>
 
-      <div id="main-container">
-        <h2>Todos</h2>
-        <TodoAdd v-on:add-todo="addTodo" />
-        <TodosComponent v-bind:todoslist="copyTodos" v-on:delete-todo="deleteTodo" />
-      </div>
+    <div id="main-container">
+      <h2>Todos</h2>
+      <TodoAdd v-on:add-todo="addTodo" />
+      <TodosComponent
+        v-bind:todoslist="copyTodos"
+        v-on:delete-todo="deleteTodo"
+      />
     </div>
+  </div>
 </template>
 
 <script>
@@ -20,27 +23,30 @@ import TodoAdd from "./components/TodoAdd.vue";
 export default {
   name: "App",
   components: {
-    TodosComponent, TodoAdd, SearchComponent
-  
+    TodosComponent,
+    TodoAdd,
+    SearchComponent,
   },
   methods: {
-  deleteTodo(id) {
-    this.todos = this.todos.filter(todo => todo.id != id);
-    this.copyTodos = [...this.todos];
-  },
-  addTodo(todo) {
-    this.todos.push(todo);
-    this.copyTodos = [...this.todos];
-  },
-  querySearch(query){
-    if(query.trim() === ''){
+    deleteTodo(id) {
+      this.todos = this.todos.filter((todo) => todo.id != id);
       this.copyTodos = [...this.todos];
-    }else{
-      const temp = this.todos.filter(todo => {return todo.title.includes(query)});
-      this.copyTodos = [...temp];
-    }
-  }
-},
+    },
+    addTodo(todo) {
+      this.todos.push(todo);
+      this.copyTodos = [...this.todos];
+    },
+    querySearch(query) {
+      if (query.trim() === "") {
+        this.copyTodos = [...this.todos];
+      } else {
+        const temp = this.todos.filter((todo) => {
+          return todo.title.includes(query);
+        });
+        this.copyTodos = [...temp];
+      }
+    },
+  },
 
   data() {
     return {
@@ -64,7 +70,7 @@ export default {
           id: 3,
           title: "Jugar a pádel",
           completed: true,
-        }
+        },
       ],
       copyTodos: [],
     };
@@ -116,6 +122,19 @@ body {
 h2 {
   padding: 0 10px;
 }
+@media screen and (max-width: 600px) {
+  #header {
+     width: 80%;
+    margin: 20px auto; /* Esto centrará el elemento horizontal y verticalmente */
+    text-align: center;
+    margin-left: 80px;
+  }
+
+ #main-container {
+  width: 120%;
+ }
+}
+
 </style>
 
 

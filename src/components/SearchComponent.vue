@@ -34,4 +34,9 @@ input {
   text-align: center;
   border-radius: 20px;
 }
+@media screen and (max-width: 600px) {
+    input{
+        width: 60%;
+        }
+}
 </style>
