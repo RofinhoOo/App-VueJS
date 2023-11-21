@@ -29,7 +29,7 @@ export default {
 input {
   border: solid 1px black;
   padding: 10px;
-  width: 20%;
+  width: 40%;
   outline: none;
   text-align: center;
   border-radius: 20px;
