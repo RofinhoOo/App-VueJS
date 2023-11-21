@@ -132,8 +132,7 @@ h2 {
 
  #main-container {
   width: 120%;
-  margin-left: 20px;
-  margin-right: 20px;
+  
  }
 }
 
